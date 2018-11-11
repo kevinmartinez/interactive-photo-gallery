@@ -1,0 +1,4 @@
+# Ignorance is bliss
+.vscode
+node_modules
+.DS_Store
