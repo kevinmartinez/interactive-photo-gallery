@@ -1,0 +1,30 @@
+{
+  "name": "p4-interactive-photo-gallery",
+  "version": "1.0.0",
+  "description": "css grid based js photo gallery",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "reload": "^2.3.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevinmartinez/interactive-photo-gallery.git"
+  },
+  "keywords": [
+    "css-grid",
+    "js",
+    "jquery",
+    "lightbox",
+    "interactive"
+  ],
+  "author": "kevin martinez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kevinmartinez/interactive-photo-gallery/issues"
+  },
+  "homepage": "https://github.com/kevinmartinez/interactive-photo-gallery#readme"
+}
