@@ -1,0 +1,39 @@
+:root {
+  /* Color scheme from www.awwwards.com <3 */
+  --awww-white: #f4f7f6;
+  --awww-black: #202121;
+  --awww-bluegreen: #49c5b6;
+  --awww-yellow: #fef7c0;
+  --awww-grey: #a6abab;
+  --awww-dark-grey: #707070;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+* {
+  outline: 1px solid red;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: var(--awww-white)
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--awww-black)
+}
+
+img {
+  width: 100%;
+  max-width: 600px;
+}
