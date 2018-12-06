@@ -6,10 +6,20 @@
   --awww-yellow: #fef7c0;
   --awww-grey: #a6abab;
   --awww-dark-grey: #707070;
+  /* Font stacks */
+  --font-headings: 'Helvetica', sans-serif;
+  --font-body: 'Times New Roman', serif;
+  /* Paddings */
+
+  /* Margin */
+
+  /* Base Font */
+  --font-size: 1em;
 }
 
 html {
   box-sizing: border-box;
+  font-size: var(--font-size);
 }
 
 * {
@@ -23,17 +33,116 @@ html {
 }
 
 body {
-  background-color: var(--awww-white)
+  background-color: var(--awww-white);
+  background: var(--awww-bluegreen, red);
+  background: linear-gradient(var(--awww-white), var(--awww-dark-grey));
+  font-family: var(--font-body);
 }
 
 h1,
 h2,
 h3,
 h4 {
-  color: var(--awww-black)
+  color: var(--awww-black);
+  font-family: var(--font-headings);
+  /* Huh? */
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif */
 }
 
 img {
   width: 100%;
   max-width: 600px;
 }
+
+figure {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+
+figcaption {
+  align-self: flex-end;
+}
+
+.grid {
+  max-width: 845px;
+  display: grid;
+  margin: auto;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+  /* grid-auto-rows: minmax(300px, 1fr); */
+  /* Shorthand */
+  grid-gap: 15px;
+}
+
+/* form {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-column: 1 / 4;
+} */
+
+form {
+  grid-column: 1 / -1;
+}
+
+/* input {
+  padding: 20px;
+  width: 100%;
+} */
+
+.btn {
+  padding: 10px;
+  background: teal;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  color: white;
+}
+
+@media (min-width: 615px) {
+
+    /* WHOA! */
+  :root {
+    --font-size: 1.5em;
+  }
+
+  * {
+    outline-color: yellow;
+  }
+
+  body {
+    background-color: red;
+  }
+}
+
+.upButton,
+.downButton,
+.removeButton {
+  padding: 10px;
+}
+
+.upButton {
+  background: green;
+}
+
+.downButton {
+  background: yellow;
+}
+
+.removeButton {
+  background: crimson;
+}
+
+/*
+@media (min-width: 930px) {
+
+  body {
+    background-color: yellow;
+  }
+
+  form {
+    grid-column: span 3 / -1;
+  }
+
+} */
