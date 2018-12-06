@@ -7,20 +7,23 @@ console.log('start program')
 const inputSearch = document.querySelector('.input__search')
 console.log(inputSearch)
 
+// Filter images
 inputSearch.addEventListener('input', (e) => {
-  console.log(inputSearch.value)
+  console.log(e)
+  for (let i = 0; i < captions.length; i += 1) {
+    if (captions[i].textContent.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase())) {
+      console.dir(captions[i])
+      console.log(captions[i].textContent)
+      captions[i].parentElement.style.display = 'block'
+    } else {
+      captions[i].parentElement.style.display = 'none'
+    }
+  }
+
 })
 
 // Images
 const captions = document.querySelectorAll('figcaption')
 
-for (let i = 0; i <= captions.length; i += 1) {
-  console.log(captions[i])
-}
-
 // Searchfilter
 const buttonSearch = document.querySelector('.button__search')
-
-buttonSearch.addEventListener('click', (e) => {
-
-})
