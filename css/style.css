@@ -51,7 +51,7 @@ h4 {
 
 img {
   width: 100%;
-  max-width: 600px;
+  max-width: 200px;
 }
 
 figure {
@@ -67,7 +67,8 @@ figcaption {
 }
 
 .grid {
-  max-width: 845px;
+  max-width: 960px;
+  padding: 20px;
   display: grid;
   margin: auto;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -134,7 +135,7 @@ form {
   background: crimson;
 }
 
-/*
+
 @media (min-width: 930px) {
 
   body {
@@ -145,4 +146,4 @@ form {
     grid-column: span 3 / -1;
   }
 
-} */
+}
