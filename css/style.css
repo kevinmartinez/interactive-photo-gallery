@@ -9,11 +9,8 @@
   /* Font stacks */
   --font-headings: 'Helvetica', sans-serif;
   --font-body: 'Times New Roman', serif;
-  /* Paddings */
 
-  /* Margin */
-
-  /* Base Font */
+  /* Base Font, this variable gets updated in the media queries */
   --font-size: 16px;
 }
 
@@ -67,7 +64,13 @@ figure {
 }
 
 figcaption {
-  align-self: flex-end;
+  /* Visually hide this content */
+  /* Code from Jonathan Snook: https://snook.ca/archives/html_and_css/hiding-content-for-accessibility  */
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
 }
 
 .grid {
@@ -76,17 +79,8 @@ figcaption {
   display: grid;
   margin: auto;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-
-  /* grid-auto-rows: minmax(300px, 1fr); */
-  /* Shorthand */
   grid-gap: 15px;
 }
-
-/* form {
-  grid-column-start: 1;
-  grid-column-end: 4;
-  grid-column: 1 / 4;
-} */
 
 .form {
   grid-column: 1 / -1;
@@ -107,6 +101,18 @@ input {
   color: white;
 }
 
+/*
+Footer
+============================== */
+footer {
+  text-align: center;
+}
+
+/* TODO: Remove before submit */
+body::before {
+  content: "media small devices (phones)"
+}
+
 /* Grid 3 columns */
 @media (min-width: 670px) {
 
@@ -114,102 +120,55 @@ input {
   :root {
     --font-size: 18px;
   }
-     header {
-      font-size: 1.5rem;
-    }
 
-  .form {
-  justify-content: center;
-}
-
-input {
-  flex-basis: 40%;
-}
-
-.btn {
-
-  flex-basis: 20%;
-  padding: 10px;
-  background: teal;
-  border-radius: 5px;
-  font-size: 1.5rem;
-  color: white;
-}
-
-  body {
-    background-color: red;
-  }
-/*
-  .form {
-    grid-column-start: 2;
-    grid-column-end: 3;
+  body::before {
+    content: "media min-width: 670px"
   }
 
-    figure:first-of-type {
-    border: 5px solid rebeccapurple;
-    grid-column-start: 1;
-  } */
-}
+  header {
+    font-size: 1.5rem;
+  }
 
-.upButton,
-.downButton,
-.removeButton {
-  padding: 10px;
-}
+  .form {
+    font-size: 1.5rem;
+    justify-content: center;
+  }
 
-.upButton {
-  background: green;
-}
+  input {
+    flex-basis: 40%;
+  }
 
-.downButton {
-  background: yellow;
-}
-
-.removeButton {
-  background: crimson;
+  .btn {
+    flex-basis: 20%;
+  }
 }
 
 /* Grid snaps to 4 */
 @media (min-width: 885px) {
 
-  /* html {
-    font-size: 18px;
-  } */
-
   :root {
-    --font-size: 18px;
+    --font-size: 20px;
   }
 
-  /* .form {
-    grid-column-start: 2;
-    grid-column-end: 4;
+  /* TODO: Remove before submit */
+  body::before {
+    content: "media min-width: 885px"
   }
-
-  figure:first-of-type {
-    border: 5px solid yellow;
-    grid-column-start: 1;
-  } */
-
-
-  body {
-    background-color: teal;
-  }
-
-
 }
 
 /* TODO: Is "screen and" needed? */
   @media screen and (min-width: 1200px) {
 
-    /* html {
-      font-size: 20px;
-    } */
-
-    :root {
-      --font-size: 20px;
-    }
-
-    header {
-      font-size: 2rem;
-    }
+  :root {
+    --font-size: 22px;
   }
+
+  /* TODO: Remove before submit */
+  body::before {
+    content: "media min-width: 1200px"
+  }
+
+  header {
+    font-size: 2rem;
+  }
+}
