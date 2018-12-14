@@ -74,7 +74,12 @@ figure:hover {
   filter: blur(0) grayscale(0);
 }
 
-figcaption {
+/* Elements need to be hidden to be more in line with mockup,
+  ficaptions are inserted inte the jQuery plugin 'lightbox' own caption data attribute,
+  but i want figcaptions for accessibility reasons, and the same goes for the heading,
+  now screen readers can read out the information */
+
+.hidden {
   /* Visually hide this content */
   /* Code from Jonathan Snook: https://snook.ca/archives/html_and_css/hiding-content-for-accessibility  */
   position: absolute !important;
@@ -90,7 +95,7 @@ figcaption {
   display: grid;
   margin: auto;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 15px;
+  grid-gap: 25px;
 }
 
 .form {
