@@ -9,6 +9,9 @@ const captions = document.querySelectorAll('figcaption');
 // Input field
 const inputSearch = document.querySelector('.input__search');
 
+// Focus input field on page enter
+inputSearch.focus()
+
 // Filter images
 inputSearch.addEventListener('input', (e) => {
   for (let i = 0; i < captions.length; i += 1) {
