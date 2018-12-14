@@ -34,9 +34,10 @@ const title = figcaptions[0].textContent;
 
 // Loop through all figures
 
-const figures = document.querySelectorAll('figure')
-console.log(figures)
+const figures = document.querySelectorAll('figure');
+console.log(figures);
 
+// TODO: Refactor
 for (let i = 0; i < figures.length; i += 1) {
   // console.log(figures[i])
   // console.log(figures[i].firstElementChild)
@@ -44,3 +45,14 @@ for (let i = 0; i < figures.length; i += 1) {
 
   figures[i].firstElementChild.dataset.title = figures[i].lastElementChild.textContent;
 }
+
+// Lightbox settings/options
+
+lightbox.option({
+  'resizeDuration': 200,
+  'wrapAround': true,
+  maxWidth: 600,
+  disableScrolling: true,
+  positionFromTop: 100,
+  showImageNumberLabel: false,
+});
