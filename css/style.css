@@ -14,7 +14,7 @@
   /* Margin */
 
   /* Base Font */
-  --font-size: 1em;
+  --font-size: 16px;
 }
 
 html {
@@ -34,8 +34,8 @@ html {
 
 body {
   background-color: var(--awww-white);
-  background: var(--awww-bluegreen, red);
-  background: linear-gradient(var(--awww-white), var(--awww-dark-grey));
+  /* background: var(--awww-bluegreen, red);
+  background: linear-gradient(var(--awww-white), var(--awww-dark-grey)); */
   font-family: var(--font-body);
 }
 
@@ -49,9 +49,13 @@ h4 {
   /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif */
 }
 
+h1 {
+  font-size: 1.6em;
+  text-align: center;
+}
+
 img {
   width: 100%;
-  max-width: 200px;
 }
 
 figure {
@@ -84,16 +88,18 @@ figcaption {
   grid-column: 1 / 4;
 } */
 
-form {
+.form {
   grid-column: 1 / -1;
+  display: flex;
 }
 
-/* input {
+input {
   padding: 20px;
-  width: 100%;
-} */
+  width: 80%;
+}
 
 .btn {
+  width: 20%;
   padding: 10px;
   background: teal;
   border-radius: 5px;
@@ -101,20 +107,48 @@ form {
   color: white;
 }
 
-@media (min-width: 615px) {
+/* Grid 3 columns */
+@media (min-width: 670px) {
 
     /* WHOA! */
   :root {
-    --font-size: 1.5em;
+    --font-size: 18px;
   }
+     header {
+      font-size: 1.5rem;
+    }
 
-  * {
-    outline-color: yellow;
-  }
+  .form {
+  justify-content: center;
+}
+
+input {
+  flex-basis: 40%;
+}
+
+.btn {
+
+  flex-basis: 20%;
+  padding: 10px;
+  background: teal;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  color: white;
+}
 
   body {
     background-color: red;
   }
+/*
+  .form {
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+
+    figure:first-of-type {
+    border: 5px solid rebeccapurple;
+    grid-column-start: 1;
+  } */
 }
 
 .upButton,
@@ -135,15 +169,47 @@ form {
   background: crimson;
 }
 
+/* Grid snaps to 4 */
+@media (min-width: 885px) {
 
-@media (min-width: 930px) {
+  /* html {
+    font-size: 18px;
+  } */
+
+  :root {
+    --font-size: 18px;
+  }
+
+  /* .form {
+    grid-column-start: 2;
+    grid-column-end: 4;
+  }
+
+  figure:first-of-type {
+    border: 5px solid yellow;
+    grid-column-start: 1;
+  } */
+
 
   body {
-    background-color: yellow;
+    background-color: teal;
   }
 
-  form {
-    grid-column: span 3 / -1;
-  }
 
 }
+
+/* TODO: Is "screen and" needed? */
+  @media screen and (min-width: 1200px) {
+
+    /* html {
+      font-size: 20px;
+    } */
+
+    :root {
+      --font-size: 20px;
+    }
+
+    header {
+      font-size: 2rem;
+    }
+  }
