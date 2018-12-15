@@ -72,6 +72,7 @@ figure {
 
 figure:hover {
   filter: blur(0) grayscale(0);
+  box-shadow: rgba(73, 197, 182, .8)  0 0 20px;
 }
 
 /* Elements need to be hidden to be more in line with mockup,
@@ -106,6 +107,20 @@ figure:hover {
 input {
   padding: 20px;
   width: 100%;
+  border: none;
+  outline: none;
+  background-color: rgba(73, 197, 182, .3);
+  /* box-shadow: none;
+    border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none; */
+  transition: background-color .5s ease-in-out;
+}
+
+input:focus {
+  outline: 2px solid rgba(73, 197, 182, .6);
+  box-shadow: rgba(73, 197, 182, .8)  0 0 20px;
+  background-color: #fff;
 }
 
 /*
