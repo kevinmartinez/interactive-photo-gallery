@@ -1,10 +1,17 @@
 // My js code
 console.log('start program');
 
-// Image search
-
 // Captions
 const captions = document.querySelectorAll('figcaption');
+
+// TODO: Remove test code after optomization/refactoring
+console.log(captions)
+
+captions.forEach((element, x, y) => {
+  console.log(element)
+  console.log('x: ', x)
+  console.log('y: ', y)
+});
 
 // Input field
 const inputSearch = document.querySelector('.input__search');
@@ -38,9 +45,10 @@ const title = figcaptions[0].textContent;
 // Loop through all figures
 
 const figures = document.querySelectorAll('figure');
-console.log(figures);
+// console.log(figures);
 
-// TODO: Refactor
+// TODO: Refactor?
+
 for (let i = 0; i < figures.length; i += 1) {
   // console.log(figures[i])
   // console.log(figures[i].firstElementChild)
