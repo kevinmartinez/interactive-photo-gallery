@@ -5,13 +5,13 @@ console.log('start program');
 const captions = document.querySelectorAll('figcaption');
 
 // TODO: Remove test code after optomization/refactoring
-console.log(captions)
+// console.log(captions)
 
-captions.forEach((element, x, y) => {
-  console.log(element)
-  console.log('x: ', x)
-  console.log('y: ', y)
-});
+// captions.forEach((element, x, y) => {
+//   console.log(element)
+//   console.log('x: ', x)
+//   console.log('y: ', y)
+// });
 
 // Input field
 const inputSearch = document.querySelector('.input__search');
@@ -50,9 +50,10 @@ const figures = document.querySelectorAll('figure');
 // TODO: Refactor?
 
 for (let i = 0; i < figures.length; i += 1) {
-  console.log(figures[i])
-  console.log(figures[i].firstElementChild)
+  // console.dir(figures[i])
+  // console.dir(figures[i].firstElementChild)
   // console.log(figures[i].lastElementChild)
+  // console.log(figures[i].firstElementChild.dataset["data-caption"])
 
-  figures[i].firstElementChild.dataset.title = figures[i].lastElementChild.textContent;
+  figures[i].firstElementChild.dataset.caption = figures[i].lastElementChild.textContent;
 }
