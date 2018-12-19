@@ -50,20 +50,9 @@ const figures = document.querySelectorAll('figure');
 // TODO: Refactor?
 
 for (let i = 0; i < figures.length; i += 1) {
-  // console.log(figures[i])
-  // console.log(figures[i].firstElementChild)
+  console.log(figures[i])
+  console.log(figures[i].firstElementChild)
   // console.log(figures[i].lastElementChild)
 
   figures[i].firstElementChild.dataset.title = figures[i].lastElementChild.textContent;
 }
-
-// Lightbox settings/options
-
-lightbox.option({
-  'resizeDuration': 200,
-  'wrapAround': true,
-  maxWidth: 600,
-  disableScrolling: true,
-  positionFromTop: 100,
-  showImageNumberLabel: false,
-});
