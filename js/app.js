@@ -1,8 +1,7 @@
 // My js code
-console.log('start program');
 
-// Captions
-const captions = document.querySelectorAll('figcaption');
+// TODO: Remove in production
+console.log('start program');
 
 // TODO: Remove test code after optomization/refactoring
 // console.log(captions)
@@ -13,19 +12,22 @@ const captions = document.querySelectorAll('figcaption');
 //   console.log('y: ', y)
 // });
 
-// Input field
+// We need the text in the search input
 const inputSearch = document.querySelector('.input__search');
+const captions = document.querySelectorAll('figcaption');
 
 // Focus input field on page enter
-inputSearch.focus()
+inputSearch.focus();
 
 // Filter images
 inputSearch.addEventListener('input', (e) => {
   for (let i = 0; i < captions.length; i += 1) {
+    let figure = captions[i].parentElement;
+
     if (captions[i].textContent.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase())) {
-      captions[i].parentElement.style.display = 'block';
+      figure.style.display = 'block';
     } else {
-      captions[i].parentElement.style.display = 'none';
+      figure.style.display = 'none';
     }
   }
 
@@ -36,24 +38,16 @@ const a = document.querySelectorAll('a');
 const figcaptions = document.querySelectorAll('figcaption');
 const title = figcaptions[0].textContent;
 
-
-// console.log(a[0].dataset);
-
-// a[0].dataset.title = title;
-
+//  This adds the text in the <figcaption> elements to the jQuery fancybx dataset
 
 // Loop through all figures
-
 const figures = document.querySelectorAll('figure');
-// console.log(figures);
-
-// TODO: Refactor?
 
 for (let i = 0; i < figures.length; i += 1) {
-  // console.dir(figures[i])
-  // console.dir(figures[i].firstElementChild)
-  // console.log(figures[i].lastElementChild)
-  // console.log(figures[i].firstElementChild.dataset["data-caption"])
+  const element = figures[i];
+  const dataAttribute = element.firstElementChild.dataset;
+  const figcaption = element.lastElementChild;
 
-  figures[i].firstElementChild.dataset.caption = figures[i].lastElementChild.textContent;
+  // Dynamically add data-caption attributes containing <figcaption> text
+  dataAttribute.caption = figcaption.textContent;
 }
