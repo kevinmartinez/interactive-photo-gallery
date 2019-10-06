@@ -6,12 +6,18 @@
   "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^9.6.1",
+    "postcss-cli": "^6.1.3",
     "reload": "^2.4.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prefix": "npx postcss *css/style.css --use autoprefixer -d build/"
   },
+  "browserslist": [
+    "last 10 versions",
+    "> 90%",
+    "IE 10"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kevinmartinez/interactive-photo-gallery.git"
