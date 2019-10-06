@@ -6,6 +6,7 @@
   --awww-yellow: #fef7c0;
   --awww-grey: #a6abab;
   --awww-dark-grey: #707070;
+
   /* Font stacks */
   --font-headings: 'Helvetica', sans-serif;
   --font-body: 'Times New Roman', serif;
@@ -32,8 +33,6 @@ html {
 
 body {
   background-color: var(--awww-white);
-  /* background: var(--awww-bluegreen, red);
-  background: linear-gradient(var(--awww-white), var(--awww-dark-grey)); */
   font-family: var(--font-body);
 }
 
@@ -43,8 +42,6 @@ h3,
 h4 {
   color: var(--awww-black);
   font-family: var(--font-headings);
-  /* Huh? */
-  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif */
 }
 
 h1 {
@@ -66,27 +63,23 @@ figure {
   flex-flow: column;
   justify-content: space-between;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-  filter: blur(.5px) grayscale(60%);
   transition: .5s ease-in-out;
 }
 
 figure:hover {
-  filter: blur(0) grayscale(0);
-  box-shadow: rgba(73, 197, 182, .8)  0 0 20px;
+  box-shadow: var(--awww-dark-grey) 0 0 20px;
 }
 
 /* Elements need to be hidden to be more in line with mockup,
-  ficaptions are inserted inte the jQuery plugin 'lightbox' own caption data attribute,
+  figcaptions are inserted into the jQuery plugin 'lightbox' own caption data attribute,
   but i want figcaptions for accessibility reasons, and the same goes for the heading,
   now screen readers can read out the information */
 
 .hidden {
   /* Visually hide this content */
-  /* Code from Jonathan Snook: https://snook.ca/archives/html_and_css/hiding-content-for-accessibility  */
   position: absolute !important;
   height: 1px; width: 1px;
   overflow: hidden;
-  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
   clip: rect(1px, 1px, 1px, 1px);
 }
 
@@ -107,19 +100,19 @@ figure:hover {
 input {
   padding: 20px;
   width: 100%;
-  border: none;
-  outline: none;
-  background-color: rgba(73, 197, 182, .3);
-  /* box-shadow: none;
-    border-color: inherit;
-  -webkit-box-shadow: none;
-  box-shadow: none; */
   transition: background-color .5s ease-in-out;
 }
 
+/* Fix rounded corners in Safari */
+input[type="search"] {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border: 0px none transparent;
+}
+
 input:focus {
-  outline: 2px solid rgba(73, 197, 182, .6);
-  box-shadow: rgba(73, 197, 182, .8)  0 0 20px;
+  outline: 2px solid var(--awww-dark-grey);
+  box-shadow: var(--awww-dark-grey)  0 0 20px;
   background-color: #fff;
 }
 
@@ -156,9 +149,6 @@ body::before {
     justify-content: center;
   }
 
-  input {
-    width: 50%;
-  }
 }
 
 /* Grid snaps to 4 */
@@ -177,8 +167,7 @@ body::before {
   }
 }
 
-/* TODO: Is "screen and" needed? */
-  @media screen and (min-width: 1200px) {
+@media (min-width: 1200px) {
 
   :root {
     --font-size: 22px;
