@@ -37,15 +37,3 @@ for (let i = 0; i < figures.length; i += 1) {
   // Dynamically add data-caption attributes containing <figcaption> text
   dataAttribute.caption = figcaption.textContent;
 }
-
-
-
-
-// TODO: Remove test code after optomization/refactoring
-// console.log(captions)
-
-// captions.forEach((element, x, y) => {
-//   console.log(element)
-//   console.log('x: ', x)
-//   console.log('y: ', y)
-// });

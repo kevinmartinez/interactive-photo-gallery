@@ -8,7 +8,7 @@
   --awww-dark-grey: #707070;
 
   /* Font stacks */
-  --font-headings: 'Helvetica', sans-serif;
+  --font-heading: 'Helvetica', sans-serif;
   --font-body: 'Times New Roman', serif;
 
   /* Base Font, this variable gets updated in the media queries */
@@ -41,7 +41,7 @@ h2,
 h3,
 h4 {
   color: var(--awww-black);
-  font-family: var(--font-headings);
+  font-family: var(--font-heading);
 }
 
 h1 {
@@ -123,21 +123,21 @@ footer {
   text-align: center;
 }
 
-/* TODO: Remove before submit */
-body::before {
-  content: "media small devices (phones)"
+/*
+Fancybox settings
+============================== */
+.fancybox-caption {
+  font-family: var(--font-heading);
+  /* This makes the image captions responsive with the text breakpoints, -1px to standout a tad less */
+  font-size: calc(var(--font-size) - 1px);
 }
 
 /* Grid 3 columns */
 @media (min-width: 670px) {
 
-    /* WHOA! */
+    /* Dynamically change root font size through CSS variables! */
   :root {
     --font-size: 18px;
-  }
-
-  body::before {
-    content: "media min-width: 670px"
   }
 
   header {
@@ -148,7 +148,6 @@ body::before {
     font-size: 1.5rem;
     justify-content: center;
   }
-
 }
 
 /* Grid snaps to 4 */
@@ -158,10 +157,6 @@ body::before {
     --font-size: 20px;
   }
 
-  /* TODO: Remove before submit */
-  body::before {
-    content: "media min-width: 885px"
-  }
   img {
     max-width: 100%;
   }
@@ -173,12 +168,11 @@ body::before {
     --font-size: 22px;
   }
 
-  /* TODO: Remove before submit */
-  body::before {
-    content: "media min-width: 1200px"
-  }
-
   header {
     font-size: 2rem;
+  }
+
+  .fancybox-caption {
+    font-size: calc(var(--font-size) + 1px)
   }
 }
