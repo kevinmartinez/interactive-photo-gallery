@@ -1,6 +1,4 @@
-# Treehouse Front-End Web Development Techdegree
-
-## Project 4 - Interactive Photo Gallery
+# An Interactive Photo Gallery
 
 * CSS
   * [Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/grid)
